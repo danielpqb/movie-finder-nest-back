@@ -11,9 +11,9 @@ export class AppController {
 
   @Get('/api/v1')
   async getMovieData(@Query('title') title: string) {
-    //consume API
-    return this.omdbService.getOmdbData(title);
+    const imdbId = await this.omdbService.getImdbIdWithTitle(title);
+    const data = this.omdbService.getOmdbData(imdbId);
 
-    // return 'this.appService.getMovieData(title)';
+    return data;
   }
 }
