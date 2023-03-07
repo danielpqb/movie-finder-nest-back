@@ -8,5 +8,4 @@ services:
     volumes:
       - .:/usr/src
       - /usr/src/node_modules
-    entrypoint: dockerize -wait tcp://postgres:5432 -timeout 20s docker-entrypoint.sh
     command: "npm run start:prod"
