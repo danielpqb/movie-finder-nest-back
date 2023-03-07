@@ -11,8 +11,6 @@ RUN npm i
 
 COPY . .
 
-RUN npx prisma generate
-
 RUN npm run build
 
 RUN apt-get update && apt-get install -y wget
